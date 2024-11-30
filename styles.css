@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins";
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5px;
+}
+
+ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+ul li {
+  margin-bottom: 20px;
+}
+ul li input {
+  position: relative;
+  z-index: 10000;
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+  outline: none;
+}
+ul li .slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul li .slide .face {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: #fff;
+}
+
+ul li .slide .face.face1 img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+ul li .slide .face.face1 {
+  left: 0;
+  transition: transform 1s;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+ul li .slide .face.face2 {
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s;
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+}
+.content h1 {
+  color: #333;
+  font-size: 4em;
+}
+
+.content p {
+  line-height: 1.7em;
+}
+
+ul li [type="radio"]:checked ~ .slide .face1 {
+  transform: rotateX(0deg);
+  transition: transform 1s;
+  transform-origin: bottom;
+}
+ul li [type="radio"]:checked ~ .slide .face2 {
+  transform: rotateX(0deg);
+  transition: transform 1s;
+  transform-origin: top;
+}
